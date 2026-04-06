@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#2563EB",
+                        "primary-hover": "#1D4ED8",
+                        "surface": "#FFFFFF",
+                        "surface-variant": "#F8FAFC",
+                        "on-surface": "#0F172A",
+                        "on-surface-variant": "#475569",
+                        "outline": "#E2E8F0",
+                        "secondary-container": "#EFF6FF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    "boxShadow": {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -2px rgba(0, 0, 0, 0.03)",
+                        "hover": "0 20px 40px -12px rgba(37, 99, 235, 0.12)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #E2E8F0;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #2563EB40;
+            box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/10">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tight text-primary font-headline">35utech</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline" href="#">Layanan</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline font-semibold" href="#">Portofolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-headline font-semibold" href="#">Kontak</a>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary-hover transition-all shadow-md shadow-primary/20">
+                Mulai Sekarang
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<span class="text-primary font-headline font-extrabold tracking-wider text-xs uppercase mb-4 block">Keahlian Kami</span>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tight mb-8 leading-[1.1] text-on-surface">
+                        Merancang <span class="text-primary">Era Digital Masa Depan.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Kami tidak hanya membangun perangkat lunak; kami merekayasa ekosistem digital yang tangguh. Jelajahi layanan khusus kami yang dirancang untuk presisi, skala, dan keamanan tanpa kompromi.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/25">
+                            Konsultasi Sekarang
+                        </button>
+<button class="px-8 py-4 rounded-lg font-bold border border-outline hover:bg-surface-variant transition-all text-on-surface">
+                            Lihat Metodologi
+                        </button>
+</div>
+</div>
+<div class="relative order-1 lg:order-2">
+<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
+<img alt="Cybersecurity and technology infrastructure" class="relative z-10 rounded-2xl shadow-soft border border-outline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjnkYHOhvCLcDIeZRZCC1ykRG9Kbj3w41Ks7-S31B23RzMJWLFGfh20xAY0sU_0HLhZVGh03Pe0ik-BROeOSYcDxpJrLD_ueNGyO2mWXRXxjhBBWgqXSEjz_HHr9rmOnim7irG-9UmL4DnIEQNNYZ1xqmVn_ASIgEtkt9Ljxdy-DKGADOZXb7YsbDQVxnodEpnQIRh05SbjKARiBXyBC4ljYVcs4UdqVcVk6tOZr2SbYqmpiNgOr2JqppeNrX910LbWyaCYbH7-ZA"/>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 bg-surface-variant/30 rounded-[2rem] mb-32">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-extrabold font-headline mb-4 text-on-surface">Layanan Unggulan Kami</h2>
+<div class="h-1 w-16 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Custom Software Development Card -->
+<div class="service-card bg-white rounded-2xl overflow-hidden flex flex-col">
+<div class="relative h-64 overflow-hidden group">
+<img alt="Software development" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlha9NYu_R5D0xqCvVSnzSTpHKpqLWSs4_lMCXxN28KRkGispJCdk-waZ2wJkvpemLP-y_qnOk-BHCbWd3hLPEHVErNQRx4AjBJlWCur1xPBBrKSFIMgteoi4yd-DtFKuC1qHc_sm5PztTgtL5LI8_lgc8mSh9seQqreeR9QhujuRZ_o3d_80trMUylLDu5gh3kZW4TMlXswfobL7qFfqllaGhc1wRke3PMYGV4kXWs_9GC6GpilMcZ8hetsAVU9RPCVD-4q0ovg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="p-10 flex-grow flex flex-col">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">developer_mode_tv</span>
+</div>
+<h3 class="text-2xl font-bold font-headline text-on-surface">Pengembangan Perangkat Lunak</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">
+                            Kami membangun aplikasi kelas perusahaan yang disesuaikan dengan logika operasional spesifik Anda. Menggunakan stack teknologi modern untuk menjamin skalabilitas dan performa tinggi.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Arsitektur Microservices</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Integrasi API-First</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Modernisasi Sistem Legacy</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Otomatisasi DevOps</span>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-outline">
+<button class="group/btn inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                                Mulai Konsultasi <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- UI/UX Design Card -->
+<div class="service-card bg-white rounded-2xl overflow-hidden flex flex-col">
+<div class="relative h-64 overflow-hidden group">
+<img alt="UX Design process" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVq8g3P0ToAiOQNDRx8TH9OTplGypqdRslkG5rYnIHx_lFTETQsxXWruFvKtG1iT9AVgitgnz5Ww9bcRT7uRyQmUFEei07Gr3H_VlaWbYWqPC0YOeUp9GWclTF7nSxF-m2cmnJ5KgmT8tkU8hnR3rdOhiL4uMIurW9UTWlvphfPZ-dW4XewZ78XxNEhr3xZXtbtqoy1lp1eiXFtJVLip_x4XYrt7m75aeosLK3EZw3ZgXkd5QzDsT2X6VDkVjVzPfHw8Zt4YE6LE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="p-10 flex-grow flex flex-col">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">auto_awesome_motion</span>
+</div>
+<h3 class="text-2xl font-bold font-headline text-on-surface">Desain UI/UX</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-base">
+                            Menciptakan antarmuka yang intuitif di mana estetika bertemu dengan psikologi kognitif. Kami memastikan setiap interaksi pengguna terasa mulus dan bermakna.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Prototyping High-Fidelity</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Riset Perilaku Pengguna</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Audit Pengalaman Pengguna</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="text-sm font-semibold text-on-surface">Desain Multi-Platform</span>
+</div>
+</div>
+<div class="mt-auto pt-6 border-t border-outline">
+<button class="group/btn inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all">
+                                Mulai Konsultasi <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-4xl mx-auto px-8 py-32 text-center">
+<h3 class="text-4xl md:text-5xl font-extrabold font-headline mb-8 text-on-surface">Siap merancang masa depan Anda?</h3>
+<p class="text-xl text-on-surface-variant mb-12">Bergabunglah dengan 150+ perusahaan global yang mempercayai 35utech sebagai tulang punggung digital mereka.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-white px-12 py-5 rounded-lg font-bold text-lg hover:bg-primary-hover transition-transform hover:scale-[1.02] shadow-xl shadow-primary/20">Mulai Sekarang</button>
+<button class="bg-white text-on-surface px-12 py-5 rounded-lg font-bold text-lg border border-outline hover:bg-surface-variant transition-colors">Lihat Studi Kasus</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-variant w-full pt-20 pb-8 border-t border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-2xl font-extrabold text-primary font-headline">35utech</div>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                    Merekayasa solusi digital berkinerja tinggi untuk generasi perusahaan global berikutnya dengan presisi arsitektur masa depan.
+                </p>
+</div>
+<div>
+<h4 class="text-on-surface font-bold mb-6">Keahlian</h4>
+<ul class="space-y-4 text-on-surface-variant font-body text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Pengembangan Perangkat Lunak</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Strategi Cloud</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Keamanan Siber</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">AI &amp; Analitik</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-surface font-bold mb-6">Perusahaan</h4>
+<ul class="space-y-4 text-on-surface-variant font-body text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Portofolio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Karir</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kontak</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-surface font-bold mb-6">Terhubung</h4>
+<ul class="space-y-4 text-on-surface-variant font-body text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">GitHub</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-body text-sm">© 2024 35utech. Arsitektur Digital Presisi.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary text-sm font-body transition-colors" href="#">Kebijakan Privasi</a>
+<a class="text-on-surface-variant hover:text-primary text-sm font-body transition-colors" href="#">Ketentuan Layanan</a>
+<a class="text-on-surface-variant hover:text-primary text-sm font-body transition-colors" href="#">Kebijakan Cookie</a>
+</div>
+</div>
+</footer>
+</body></html>
