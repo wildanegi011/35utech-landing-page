@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "Beranda", href: "#beranda" },
   { label: "Layanan", href: "#layanan" },
   { label: "Portofolio", href: "#portofolio" },
+  { label: "Prestasi", href: "#prestasi" },
   { label: "Kontak", href: "#kontak" },
 ];
 
