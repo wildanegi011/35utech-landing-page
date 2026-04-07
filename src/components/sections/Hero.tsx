@@ -14,7 +14,7 @@ const SLIDES = [
     description: "Kami tidak hanya membangun perangkat lunak; kami merekayasa ekosistem digital yang tangguh dengan presisi arsitektural masa depan."
   },
   {
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=2070",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2072",
     title: "Keamanan Tanpa Kompromi.",
     subtitle: "Mengamankan",
     description: "Infrastruktur keamanan siber kelas dunia untuk melindungi aset digital Anda dari ancaman global yang terus berkembang."

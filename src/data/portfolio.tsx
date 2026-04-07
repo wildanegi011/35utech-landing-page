@@ -7,6 +7,7 @@ export interface Project {
   challenge: string;
   solution: string;
   impact: string;
+  categoryId: number;
   category: string;
   image: string;
   gallery?: string[];
@@ -15,8 +16,10 @@ export interface Project {
   features: string[];
   year: string;
   client: string;
+  statusId?: number;
   status: string;
   link?: string;
+  isPublished?: boolean;
 }
 
 export const PORTFOLIO_DATA: Project[] = [
@@ -29,9 +32,10 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Membangun sistem perbankan yang mampu menangani jutaan transaksi per detik dengan latensi minimal, sambil tetap menjaga standar keamanan perbankan internasional yang sangat ketat.",
     solution: "Kami mengimplementasikan arsitektur mikroservis berbasis Go untuk kecepatan eksekusi, menggunakan Kafka untuk pemrosesan pesan asinkron, dan menerapkan enkripsi end-to-end serta HSM (Hardware Security Module) untuk perlindungan data.",
     impact: "Peningkatan kecepatan transaksi sebesar 300% dan pengurangan downtime sistem hingga 99.99%, memungkinkan klien untuk melakukan ekspansi bisnis ke pasar regional dengan percaya diri.",
-    category: "Fintech",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-[4/3]",
-    image: "https://images.unsplash.com/photo-1551288049-bb1c004517ae?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
     gallery: [
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
@@ -54,7 +58,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Mengolah volume data yang sangat besar (terabyte per hari) dari berbagai sumber yang tidak terstruktur menjadi visualisasi yang mudah dipahami oleh pengambil keputusan dalam waktu nyata.",
     solution: "Penggabungan Apache Spark untuk pemrosesan data skala besar dengan model TensorFlow yang dioptimalkan untuk GPU, dikemas dalam antarmuka React yang sangat responsif.",
     impact: "Membantu klien mengidentifikasi inefisiensi operasional senilai $2M per tahun dan meningkatkan akurasi stok inventori hingga 45%.",
-    category: "Data Science",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-square",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
     gallery: [
@@ -78,7 +83,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Menyediakan layanan cloud yang stabil dengan latensi rendah di seluruh region Asia Tenggara dengan biaya operasional yang kompetitif.",
     solution: "Membangun sistem orkestrasi Kubernetes multi-region dengan optimasi alogaritma cerdas untuk distribusi beban kerja berdasarkan kedekatan geografis dan ketersediaan sumber daya.",
     impact: "Pengurangan biaya infrastruktur klien sebesar 40% dan peningkatan ketersediaan layanan hingga 99.99%.",
-    category: "Infrastructure",
+    categoryId: 2,
+    category: "Website",
     aspectRatio: "aspect-video",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
     techStack: [
@@ -87,7 +93,11 @@ export const PORTFOLIO_DATA: Project[] = [
     features: ["Auto-scaling cerdas", "Deployment multi-region", "Monitoring terpusat", "Optimasi biaya AI"],
     year: "2024",
     client: "CloudFirst Asia",
-    status: "Selesai"
+    status: "Selesai",
+    gallery: [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+    ]
   },
   {
     id: 4,
@@ -98,9 +108,10 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Menghadapi serangan siber yang semakin kompleks dan cepat, di mana respons manual manusia tidak lagi memadai untuk mencegah kerusakan data.",
     solution: "Sistem pertahanan otonom yang menggunakan Large Language Models (LLM) untuk menganalisis payload serangan dan secara otomatis menutup celah keamanan dalam hitungan milidetik.",
     impact: "Pencegahan 10.000+ serangan per bulan dengan zero-day success rate 100% pada lingkungan produksi.",
-    category: "Security",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-[3/4]",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     techStack: [
       { name: "Python" }, { name: "Go" }, { name: "Elasticsearch" }, { name: "Kafka" }, { name: "React" }
     ],
@@ -118,7 +129,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Kurangnya visibilitas dalam rantai pasokan yang menyebabkan pemborosan bahan bakar dan keterlambatan pengiriman barang sensitif.",
     solution: "Implementasi jaringan sensor IoT end-to-end yang terhubung ke cloud digital twin, memungkinkan simulasi dan optimasi rute secara real-time.",
     impact: "Penurunan emisi karbon sebesar 30% dan peningkatan efisiensi pengiriman sebesar 25%.",
-    category: "Logistics",
+    categoryId: 2,
+    category: "Website",
     aspectRatio: "aspect-square",
     image: "https://images.unsplash.com/photo-1586528116311-ad86d7c4bd62?auto=format&fit=crop&q=80&w=1200",
     techStack: [
@@ -138,7 +150,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Menjaga privasi data medis pasien yang sangat sensitif sambil tetap memungkinkan akses cepat bagi tenaga medis di berbagai lokasi geografis.",
     solution: "Sistem database terdistribusi dengan enkripsi tingkat militer dan kontrol akses berbasis peran (RBAC) yang sangat granular, didukung oleh infrastruktur blockchain untuk audit trail data.",
     impact: "Mempercepat waktu tunggu pasien sebesar 40% dan memastikan kepatuhan standar keamanan data kesehatan internasional 100%.",
-    category: "Health Tech",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-[4/3]",
     image: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=1200",
     techStack: [
@@ -158,7 +171,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Ketidakstabilan pasokan energi dari sumber terbarukan (angin & surya) yang sulit diprediksi untuk memenuhi permintaan beban listrik.",
     solution: "Sistem manajemen energi berbasis AI yang melakukan peramalan konsumsi dan optimasi penyimpanan energi (BESS) secara real-time.",
     impact: "Peningkatan efisiensi distribusi energi sebesar 20% dan pengurangan ketergantungan pada sumber energi fosil sebesar 15%.",
-    category: "Green Tech",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-video",
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200",
     techStack: [
@@ -172,13 +186,14 @@ export const PORTFOLIO_DATA: Project[] = [
   {
     id: 8,
     slug: "omnichannel-commerce",
-    title: "OmniChannel Commerce",
-    description: "Pengalaman belanja terintegrated yang menyatukan ritel fisik dan digital.",
-    longDescription: "OmniChannel Commerce adalah platform e-commerce generasi baru yang menghubungkan pengalaman belanja online dan offline secara mulus.",
+    title: "Platform Kasir Omnichannel",
+    description: "Pengalaman belanja terintegrasi yang menyatukan ritel fisik dan digital melalui satu sistem kasir pusat.",
+    longDescription: "Platform Kasir Omnichannel adalah solusi Point of Sales generasi baru yang menghubungkan pengalaman belanja online dan offline secara mulus.",
     challenge: "Data inventaris dan penjualan yang terfragmentasi antar kanal, menyebabkan ketidakefisienan operasional dan pengalaman pelanggan yang buruk.",
     solution: "Arsitektur Unified Commerce yang mensinkronisasi data dari berbagai titik penjualan (POS) dan website ke dalam satu kebenaran tunggal secara real-time.",
     impact: "Kenaikan rata-rata nilai pesanan (AOV) sebesar 22% dan peningkatan retensi pelanggan sebesar 30%.",
-    category: "Retail",
+    categoryId: 3,
+    category: "Aplikasi Kasir",
     aspectRatio: "aspect-[3/4]",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200",
     techStack: [
@@ -198,7 +213,8 @@ export const PORTFOLIO_DATA: Project[] = [
     challenge: "Tim data menghabiskan 80% waktu mereka hanya untuk pembersihan dan penataan data daripada melakukan analisis berharga.",
     solution: "Implementasi pipeline DataOps otomatis dengan pengujian kualitas data bawaan (built-in data quality tests) dan orkestrasi workflow yang dapat dipantau (observable).",
     impact: "Pengurangan waktu penyediaan data dari hitungan hari menjadi menit, meningkatkan kecepatan rilis produk berbasis data sebesar 50%.",
-    category: "DevOps",
+    categoryId: 1,
+    category: "Sistem Informasi",
     aspectRatio: "aspect-square",
     image: "https://images.unsplash.com/photo-1504868584819-f8e90ece2cd1?auto=format&fit=crop&q=80&w=1200",
     techStack: [

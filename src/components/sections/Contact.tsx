@@ -7,32 +7,36 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Mail, Phone, Clock, Send, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const CONTACT_INFO = [
-  {
-    icon: MapPin,
-    label: "Alamat",
-    value: "Jl. Teknologi No. 35, Jakarta Selatan, Indonesia 12950",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "hello@35utech.com",
-    href: "mailto:hello@35utech.com",
-  },
-  {
-    icon: Phone,
-    label: "Telepon",
-    value: "+62 21 3500 3500",
-    href: "tel:+622135003500",
-  },
-  {
-    icon: Clock,
-    label: "Jam Operasional",
-    value: "Senin – Jumat, 09.00 – 18.00 WIB",
-  },
-];
+import { siteConfig } from "@/config/site-config";
 
-export default function Contact() {
+export default function Contact({ configs }: { configs?: any[] }) {
+  const getConfig = (key: string) => configs?.find(c => c.configKey === key)?.configValue;
+
+  const CONTACT_INFO = [
+    {
+      icon: MapPin,
+      label: "Alamat",
+      value: getConfig("contactAddress") || siteConfig.contact.address,
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: getConfig("contactEmail") || siteConfig.contact.email,
+      href: `mailto:${getConfig("contactEmail") || siteConfig.contact.email}`,
+    },
+    {
+      icon: Phone,
+      label: "Telepon",
+      value: getConfig("contactPhone") || siteConfig.contact.phone,
+      href: `tel:${(getConfig("contactPhone") || siteConfig.contact.phone).replace(/\s/g, "")}`,
+    },
+    {
+      icon: Clock,
+      label: "Jam Operasional",
+      value: getConfig("officeHours") || siteConfig.contact.hours,
+    },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",

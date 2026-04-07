@@ -62,11 +62,12 @@ function TechItem({ name, icon }: { name: string; icon: string }) {
   );
 }
 
-export default function Services() {
-  const { data: services = MOCK_SERVICES } = useQuery({
-    queryKey: ["services"],
-    queryFn: async () => MOCK_SERVICES,
-  });
+interface ServicesProps {
+  services: any[];
+}
+
+export default function Services({ services }: ServicesProps) {
+  const displayServices = (services && services.length > 0) ? services : MOCK_SERVICES;
 
   const techItems = [...TECH_STACK, ...TECH_STACK];
 
@@ -91,7 +92,7 @@ export default function Services() {
 
       {/* Service Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-        {services.map((service, idx) => {
+        {displayServices.map((service, idx) => {
           const Icon = IconMap[service.icon as keyof typeof IconMap] || Code2;
           return (
             <motion.div

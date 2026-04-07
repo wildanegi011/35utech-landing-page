@@ -5,28 +5,24 @@ import { useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-const NAV_ITEMS = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Layanan", href: "#layanan" },
-  { label: "Portofolio", href: "#portofolio" },
-  { label: "Prestasi", href: "#prestasi" },
-  { label: "Kontak", href: "#kontak" },
-];
+import { siteConfig } from "@/config/site-config";
 
-export default function Navbar() {
+export default function Navbar({ configs }: { configs?: any[] }) {
   const [activeItem, setActiveItem] = useState("#beranda");
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const getConfig = (key: string) => configs?.find(c => c.configKey === key)?.configValue;
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      for (let i = NAV_ITEMS.length - 1; i >= 0; i--) {
-        const el = document.querySelector(NAV_ITEMS[i].href);
+      for (let i = siteConfig.mainNav.length - 1; i >= 0; i--) {
+        const el = document.querySelector(siteConfig.mainNav[i].href);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= 150) {
-            setActiveItem(NAV_ITEMS[i].href);
+            setActiveItem(siteConfig.mainNav[i].href);
             break;
           }
         }
@@ -62,12 +58,12 @@ export default function Navbar() {
             isScrolled ? "text-on-surface" : "text-white"
           )}
         >
-          35utech<span className="text-primary">.</span>
+          {getConfig("siteName") || siteConfig.name}<span className="text-primary">.</span>
         </Link>
 
         {/* Nav Items - Center */}
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {NAV_ITEMS.map((item) => (
+          {siteConfig.mainNav.map((item) => (
             <a
               key={item.href}
               href={item.href}
